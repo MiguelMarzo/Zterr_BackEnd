@@ -26,12 +26,9 @@
 
 		<!-- Here comes the mapping definition - saved in resources dir with this hibernate config -->
 		<mapping resource="User.hbm.xml" />
-<<<<<<< HEAD
 		<mapping resource="User_Role.hbm.xml" />
 		<mapping resource="Avatar.hbm.xml" />
-=======
 		<mapping resource="Role.hbm.xml" />
->>>>>>> refs/remotes/origin/Sergio
 
 	</session-factory>
 
