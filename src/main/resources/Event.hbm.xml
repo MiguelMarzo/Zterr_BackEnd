@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.zterr.data.model">
+
+	<class name="Event" table="event">
+		<id name="id" column="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="name" column="name" />
+		<property name="description" column="description" />
+		<property name="event_date" column="event_date" />
+		<property name="latitude" column="latitude" />
+		<property name="longitude" column="longitude" />
+		<property name="iduser" column="iduser"/>
+		<many-to-one name="user" column="id" />
+	</class>
+
+</hibernate-mapping>
