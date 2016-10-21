@@ -24,9 +24,9 @@
 
 		<property name="hbm2ddl.auto">create</property>
 
-		<!-- Here comes the mapping definition - saved in resources dir with this 
-			hibernate config -->
+		<!-- Here comes the mapping definition - saved in resources dir with this hibernate config -->
 		<mapping resource="User.hbm.xml" />
+		<mapping resource="Role.hbm.xml" />
 
 	</session-factory>
 
