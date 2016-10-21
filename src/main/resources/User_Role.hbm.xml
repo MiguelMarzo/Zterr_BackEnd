@@ -6,11 +6,11 @@
 <!-- Mapping configuration details between User_Role class and User -->
 <hibernate-mapping package="org.zterr.data.model">
 
-	<class name="User_Role" table="USER_ROLE">
-		<id name="idUser" column="IDUSER">
+	<class name="User_Role" table="user_role">
+		<id name="iduser" column="iduser">
 			<generator class="identity" />
 		</id>
-		<id name="idRole" column="IDROLE">
+		<id name="idrole" column="idrole">
 			<generator class="identity" />
 		</id>
 	</class>
