@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.zterr.data.model">
+
+	<class name="Avatar" table="avatar">
+		<id name="id" column="ID">
+			<generator class="foreign">
+				<param name="property">user</param>
+			</generator>
+		</id>
+		<one-to-one name="user" cascade="persist, delete"></one-to-one>
+		<property name="description" column="description" />
+		<property name="image" column="image" />
+	</class>
+
+</hibernate-mapping>

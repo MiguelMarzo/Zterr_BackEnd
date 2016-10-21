@@ -6,13 +6,19 @@
 <!-- Mapping configuration details between User class and User_Role -->
 <hibernate-mapping package="org.zterr.data.model">
 
-	<class name="User" table="USERS">
-		<id name="id" column="ID">
+	<class name="User" table="user">
+		<id name="id" column="id">
 			<generator class="identity" />
 		</id>
-		<property name="username" column="USERNAME" />
-		<property name="password" column="PASSWORD" />
-		<property name="email" column="EMAIL" />
+		<one-to-one name="avatar" cascade="persist, delete"></one-to-one>
+		<property name="username" column="username" />
+		<property name="password" column="password" />
+		<property name="email" column="email" />
+		<list name="event" cascade="all-delete-orphan">
+			<key column="id" />
+			<index column="eventnumber" />
+			<one-to-many class="Event"></one-to-many>
+		</list>
 	</class>
 
 </hibernate-mapping>
