@@ -7,12 +7,11 @@
 <hibernate-mapping package="org.zterr.data.model">
 
 	<class name="User_Role" table="user_role">
-		<id name="iduser" column="iduser">
-			<generator class="identity" />
+			<id name="id" column="id">
+			<generator class="identity"></generator>
 		</id>
-		<id name="idrole" column="idrole">
-			<generator class="identity" />
-		</id>
+		<property name="idUser" column="iduser" />
+		<property name="idRole" column="idrole" />
 	</class>
 
 </hibernate-mapping>

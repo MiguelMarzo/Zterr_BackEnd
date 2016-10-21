@@ -34,11 +34,11 @@ public class HibernateUserDAOTest extends TestCase {
 	@Test
 	public void testSelectById() {		
 		// Select after insert
-//		User insertUser = new User(null,"Admin","Administrator user");
-//		userDAO.insert(insertUser);
-//		User user = userDAO.selectById(insertUser.getId());
-//		assertEquals("Select by Id should exist",user.getId(), insertUser.getId());
-//		
+		User insertUser = new User(null,"Admin","Administrator user");
+    	userDAO.insert(insertUser);
+		User user = userDAO.selectById(insertUser.getId());
+		assertEquals("Select by Id should exist",user.getId(), insertUser.getId());
+		
 		}
 
 	/**
@@ -68,20 +68,20 @@ public class HibernateUserDAOTest extends TestCase {
 	 */
 	@Test
 	public void testUpdate() {
-//		String updatedName = "Admin changed";
+		String updatedName = "Admin changed";
 //		
 //		// Select after first insert
-//		User insertUser = new User(null,"Admin","Administrator user");
-//		userDAO.insert(insertUser);
-//		
-//		// We update the user
-//		insertUser.setName(updatedName);
-//		userDAO.update(insertUser);
-//		
-//		// Select and check if name has changed
-//		User updatedUser = userDAO.selectById(insertUser.getId());
-//		
-//		assertEquals("User name was changed", updatedName, updatedUser.getName());
+		User insertUser = new User(null,"Admin","Administrator user");
+		userDAO.insert(insertUser);
+		
+		// We update the user
+		insertUser.setUsername(updatedName);
+		userDAO.update(insertUser);
+		
+		// Select and check if name has changed
+		User updatedUser = userDAO.selectById(insertUser.getId());
+		
+		assertEquals("User name was changed", updatedName, updatedUser.getUsername());
 	}
 
 	/**
@@ -89,13 +89,13 @@ public class HibernateUserDAOTest extends TestCase {
 	 */
 	@Test
 	public void testDelete() {
-//		// Select after first insert
-//		User insertUser = new User(null,"Admin","Administrator user");
-//		userDAO.insert(insertUser);
-//		
-//		// Delete 
-//		userDAO.delete(insertUser);
-//		User user = userDAO.selectById(insertUser.getId());
-//		assertNull("Select by Id with a deleted record id shoud be null",user);	
+		// Select after first insert
+		User insertUser = new User(null,"Admin","Administrator user");
+		userDAO.insert(insertUser);
+		
+		// Delete 
+		userDAO.delete(insertUser);
+		User user = userDAO.selectById(insertUser.getId());
+		assertNull("Select by Id with a deleted record id shoud be null",user);	
 	}
 }
