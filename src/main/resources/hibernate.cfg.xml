@@ -28,9 +28,8 @@
 		<mapping resource="User.hbm.xml" />
 		<mapping resource="User_Role.hbm.xml" />
 		<mapping resource="Avatar.hbm.xml" />
-		
-		<mapping resource="Role.hbm.xml" />
 
+		<mapping resource="Role.hbm.xml" />
 
 	</session-factory>
 
