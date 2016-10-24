@@ -9,21 +9,21 @@ public class Event {
 	private Date event_date;
 	private float latitude;
 	private float longitude;
-	private Integer iduser;
+	private User user;
 
 	public Event() {
 
 	}
 
 	public Event(Integer id, String name, String description, Date event_date, float latitude, float longitude,
-			Integer iduser) {
+			User user) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.event_date = event_date;
 		this.latitude = latitude;
 		this.longitude = longitude;
-		this.iduser = iduser;
+		this.user = user;
 	}
 
 	public Integer getId() {
@@ -74,12 +74,14 @@ public class Event {
 		this.longitude = longitude;
 	}
 
-	public Integer getIduser() {
-		return iduser;
+	public User getUser() {
+		return user;
 	}
 
-	public void setIduser(Integer iduser) {
-		this.iduser = iduser;
+	public void setUser(User user) {
+		this.user = user;
 	}
+
+
 
 }

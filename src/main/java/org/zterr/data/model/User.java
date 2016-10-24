@@ -1,10 +1,15 @@
 package org.zterr.data.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
 	private Integer id;
 	private String username;
 	private String password;
 	private String email;
+	private Avatar avatar;
+	private List<Event> events = new ArrayList<Event>();
 
 	/**
 	 * Default constructor
@@ -57,6 +62,22 @@ public class User {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Avatar getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(Avatar avatar) {
+		this.avatar = avatar;
+	}
+
+	public List<Event> getEvents() {
+		return events;
+	}
+
+	public void setEvents(List<Event> events) {
+		this.events = events;
 	}
 
 
