@@ -5,7 +5,6 @@
 
 <!-- Mapping configuration details between User class and User_Role -->
 <hibernate-mapping package="org.zterr.data.model">
-
 	<class name="Role" table="role">
 		<id name="id" column="id">
 			<generator class="identity" />

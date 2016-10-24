@@ -4,6 +4,7 @@ public class Avatar {
 	private Integer id;
 	private String description;
 	private String image;
+	private User user;
 
 	public Avatar() {
 
@@ -37,6 +38,14 @@ public class Avatar {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 }

@@ -30,7 +30,7 @@
 		<mapping resource="Avatar.hbm.xml" />
 
 		<mapping resource="Role.hbm.xml" />
-
+		<mapping resource="Event.hbm.xml" />
 	</session-factory>
 
 </hibernate-configuration>
