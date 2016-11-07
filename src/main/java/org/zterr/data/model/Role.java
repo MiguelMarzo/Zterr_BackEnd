@@ -1,5 +1,8 @@
 package org.zterr.data.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Represents the Role
  * 
@@ -10,6 +13,7 @@ public class Role {
 	private Integer id;
 	private String name;
 	private String description;
+	private List<Role> roles = new ArrayList<Role>();
 	
 	public Role(){
 		
@@ -60,6 +64,14 @@ public class Role {
 	 */
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
 	}
 
 

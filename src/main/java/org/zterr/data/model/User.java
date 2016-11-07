@@ -10,6 +10,7 @@ public class User {
 	private String email;
 	private Avatar avatar;
 	private List<Event> events = new ArrayList<Event>();
+	private List<Role> roles = new ArrayList<Role>();
 
 	/**
 	 * Default constructor
@@ -76,8 +77,15 @@ public class User {
 		return events;
 	}
 
-	public void setEvents(List<Event> events) {
+	public void setEvents(List<Event> roles) {
 		this.events = events;
+	}
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
 	}
 
 
