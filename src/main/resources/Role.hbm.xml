@@ -11,6 +11,11 @@
 		</id>
 		<property name="name" column="name" />
 		<property name="description" column="description" />
+		<list name="users" table="user_role" inverse="true">
+		<key column="idrole" />
+		<list-index column="list_order" />
+		<many-to-many class="User" column="iduser" />
+		</list>
 	</class>
 	
 </hibernate-mapping>

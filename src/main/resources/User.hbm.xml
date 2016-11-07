@@ -19,6 +19,11 @@
 			<index column="eventnumber" />
 			<one-to-many class="Event"></one-to-many>
 		</list>
+		<list name="roles" table="user_role" cascade="all-delete-orphan">
+			<key column="iduser" />
+			<list-index column="list_order" />
+			<many-to-many class="Role" column="idrole" />
+		</list>
 	</class>
 
 </hibernate-mapping>
