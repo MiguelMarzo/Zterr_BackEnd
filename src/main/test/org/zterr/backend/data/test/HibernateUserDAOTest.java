@@ -3,8 +3,11 @@ package org.zterr.backend.data.test;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.zterr.data.dao.EventDAO;
 import org.zterr.data.dao.UserDAO;
+import org.zterr.data.dao.impl.HibernateEventDAO;
 import org.zterr.data.dao.impl.HibernateUserDAO;
+import org.zterr.data.model.Event;
 import org.zterr.data.model.User;
 
 import junit.framework.TestCase;
@@ -32,9 +35,13 @@ public class HibernateUserDAOTest extends TestCase {
 	 * Test method for {@link io.wzw.backend.data.dao.impl.HibernateUserDAO#selectById(java.lang.Long)}.
 	 */
 	@Test
-	public void testSelectById() {		
+	public void testSelectById() {
+		EventDAO event = new HibernateEventDAO();
+		Event event1 = new Event();
 		// Select after insert
 		User insertUser = new User(null,"Admin","Administrator user");
+		event1.setUser(insertUser);
+		event.insert(event1);
     	userDAO.insert(insertUser);
 		User user = userDAO.selectById(insertUser.getId());
 		assertEquals("Select by Id should exist",user.getId(), insertUser.getId());
@@ -68,11 +75,17 @@ public class HibernateUserDAOTest extends TestCase {
 	 */
 	@Test
 	public void testUpdate() {
+		
+		EventDAO event = new HibernateEventDAO();
+		Event event1 = new Event();
 		String updatedName = "Admin changed";
 //		
 //		// Select after first insert
 		User insertUser = new User(null,"Admin","Administrator user");
 		userDAO.insert(insertUser);
+		event1.setUser(insertUser);
+		event.insert(event1);
+		
 		
 		// We update the user
 		insertUser.setUsername(updatedName);

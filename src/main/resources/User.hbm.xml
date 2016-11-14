@@ -15,7 +15,7 @@
 		<property name="password" column="password" />
 		<property name="email" column="email" />
 		<list name="events" cascade="all-delete-orphan">
-			<key column="id" />
+			<key column="iduser" />
 			<index column="eventnumber" />
 			<one-to-many class="Event"></one-to-many>
 		</list>

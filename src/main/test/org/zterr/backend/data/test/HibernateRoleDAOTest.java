@@ -5,8 +5,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.zterr.data.dao.RoleDAO;
+import org.zterr.data.dao.UserDAO;
 import org.zterr.data.dao.impl.HibernateRoleDAO;
+import org.zterr.data.dao.impl.HibernateUserDAO;
 import org.zterr.data.model.Role;
+import org.zterr.data.model.User;
 
 import junit.framework.TestCase;
 
@@ -33,9 +36,13 @@ public class HibernateRoleDAOTest extends TestCase {
 	 * Test method for {@link io.wzw.backend.data.dao.impl.HibernateRoleDAO#selectById(java.lang.Long)}.
 	 */
 	@Test
-	public void testSelectById() {		
+	public void testSelectById() {
+		UserDAO user = new HibernateUserDAO();
+		User user1 = new User();
 		// Select after insert
 		Role insertRole = new Role(null,"Admin","Administrator role");
+		user1.getRoles().add(insertRole);
+		user.insert(user1);
 		roleDAO.insert(insertRole);
 		Role role = roleDAO.selectById(insertRole.getId());
 		assertEquals("Select by Id should exist",role.getId(), insertRole.getId());
@@ -47,9 +54,16 @@ public class HibernateRoleDAOTest extends TestCase {
 	 */
 	@Test
 	public void testSelectAll() {
+		
+		//UserDAO user = new HibernateUserDAO();
+		//User user1 = new User();
+		
 		int totalElements = roleDAO.selectAll().size();
 		
 		Role insertRole = new Role(null,"Admin","Administrator role");
+		//user1.getRoles().add(insertRole);
+		//user.insert(user1);
+		
 		roleDAO.insert(insertRole);
 		int totalElementsAfterInsert = roleDAO.selectAll().size();
 		
@@ -69,10 +83,14 @@ public class HibernateRoleDAOTest extends TestCase {
 	 */
 	@Test
 	public void testUpdate() {
+		UserDAO user = new HibernateUserDAO();
+		User user1 = new User();
 		String updatedName = "Admin changed";
 		
 		// Select after first insert
 		Role insertRole = new Role(null,"Admin","Administrator role");
+		user1.getRoles().add(insertRole);
+		user.insert(user1);
 		roleDAO.insert(insertRole);
 		
 		// We update the role
@@ -91,7 +109,11 @@ public class HibernateRoleDAOTest extends TestCase {
 	@Test
 	public void testDelete() {
 		// Select after first insert
+		UserDAO user = new HibernateUserDAO();
+		User user1 = new User();
 		Role insertRole = new Role(null,"Admin","Administrator role");
+		user1.getRoles().add(insertRole);
+		user.insert(user1);
 		roleDAO.insert(insertRole);
 		
 		// Delete 

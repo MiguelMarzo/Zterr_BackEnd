@@ -13,7 +13,7 @@ public class Role {
 	private Integer id;
 	private String name;
 	private String description;
-	private List<Role> roles = new ArrayList<Role>();
+	private List<User> users = new ArrayList<User>();
 	
 	public Role(){
 		
@@ -66,12 +66,12 @@ public class Role {
 		this.description = description;
 	}
 	
-	public List<Role> getRoles() {
-		return roles;
+	public List<User> getUsers() {
+		return users;
 	}
 
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
+	public void setUsers(List<User> users) {
+		this.users = users;
 	}
 
 
