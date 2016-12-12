@@ -1,12 +1,11 @@
 package org.zterr.data.dao;
 
-import java.util.List;
-
 import org.zterr.data.model.Avatar;
 
-public interface AvatarDAO {
+public interface AvatarDAO extends GenericDAO<Avatar>{
 
-	public Avatar selectById(Integer id);
+
+	/*public Avatar selectById(Integer id);
 
 	public List<Avatar> selectAll();
 
@@ -14,6 +13,6 @@ public interface AvatarDAO {
 
 	public void update(Avatar avatar);
 
-	public void delete(Avatar avatar);
+	public void delete(Avatar avatar);*/
 
 }

@@ -1,12 +1,10 @@
 package org.zterr.data.dao;
 
-import java.util.List;
-
 import org.zterr.data.model.Role;
 
-public interface RoleDAO {
+public interface RoleDAO extends GenericDAO<Role> {
 
-	public Role selectById(Integer id);
+	/*public Role selectById(Integer id);
 
 	public List<Role> selectAll();
 
@@ -14,6 +12,6 @@ public interface RoleDAO {
 
 	public void update(Role role);
 
-	public void delete(Role role);
+	public void delete(Role role);*/
 
 }

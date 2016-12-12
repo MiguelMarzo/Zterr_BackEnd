@@ -1,12 +1,10 @@
 package org.zterr.data.dao;
 
-import java.util.List;
-
 import org.zterr.data.model.Event;
 
-public interface EventDAO {
+public interface EventDAO extends GenericDAO<Event>{
 
-	public Event selectById(Integer id);
+	/*public Event selectById(Integer id);
 
 	public List<Event> selectAll();
 
@@ -14,6 +12,6 @@ public interface EventDAO {
 
 	public void update(Event event);
 
-	public void delete(Event event);
+	public void delete(Event event);*/
 
 }

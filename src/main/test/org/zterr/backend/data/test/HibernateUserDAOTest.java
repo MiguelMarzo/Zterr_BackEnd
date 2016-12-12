@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.zterr.data.dao.UserDAO;
 import org.zterr.data.dao.impl.HibernateUserDAO;
+import org.zterr.data.model.Role;
 import org.zterr.data.model.User;
 
 import junit.framework.TestCase;
@@ -36,7 +37,7 @@ public class HibernateUserDAOTest extends TestCase {
 		// Select after insert
 		User insertUser = new User(null,"Admin","Administrator user");
     	userDAO.insert(insertUser);
-		User user = userDAO.selectById(insertUser.getId());
+		User user = userDAO.selectById(insertUser.getId(), null);
 		assertEquals("Select by Id should exist",user.getId(), insertUser.getId());
 		
 		}
@@ -46,11 +47,11 @@ public class HibernateUserDAOTest extends TestCase {
 	 */
 	@Test
 	public void testSelectAll() {
-		int totalElements = userDAO.selectAll().size();
+		int totalElements = userDAO.selectAll(null).size();
 		
 		User insertUser = new User(null,"Admin","Administrator user");
 		userDAO.insert(insertUser);
-		int totalElementsAfterInsert = userDAO.selectAll().size();
+		int totalElementsAfterInsert = userDAO.selectAll(null).size();
 		
 		assertEquals("Select All returns all elements", totalElements + 1, totalElementsAfterInsert);
 	}
@@ -79,7 +80,7 @@ public class HibernateUserDAOTest extends TestCase {
 		userDAO.update(insertUser);
 		
 		// Select and check if name has changed
-		User updatedUser = userDAO.selectById(insertUser.getId());
+		User updatedUser = userDAO.selectById(insertUser.getId(), null);
 		
 		assertEquals("User name was changed", updatedName, updatedUser.getUsername());
 	}
@@ -95,7 +96,7 @@ public class HibernateUserDAOTest extends TestCase {
 		
 		// Delete 
 		userDAO.delete(insertUser);
-		User user = userDAO.selectById(insertUser.getId());
+		User user = userDAO.selectById(insertUser.getId(), null);
 		assertNull("Select by Id with a deleted record id shoud be null",user);	
 	}
 }
