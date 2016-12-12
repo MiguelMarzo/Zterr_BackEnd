@@ -3,8 +3,11 @@ package org.zterr.backend.data.test;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.zterr.data.dao.EventDAO;
 import org.zterr.data.dao.UserDAO;
+import org.zterr.data.dao.impl.HibernateEventDAO;
 import org.zterr.data.dao.impl.HibernateUserDAO;
+import org.zterr.data.model.Event;
 import org.zterr.data.model.User;
 
 import junit.framework.TestCase;
@@ -60,6 +63,7 @@ public class HibernateUserDAOTest extends TestCase {
 	 */
 	@Test
 	public void testInsert() {
+		
 		assertTrue("Insert",true);
 	}
 
@@ -68,6 +72,12 @@ public class HibernateUserDAOTest extends TestCase {
 	 */
 	@Test
 	public void testUpdate() {
+		
+		//EventDAO event = new HibernateEventDAO();
+		//Event event1 = new Event();
+		
+		
+		
 		String updatedName = "Admin changed";
 //		
 //		// Select after first insert
