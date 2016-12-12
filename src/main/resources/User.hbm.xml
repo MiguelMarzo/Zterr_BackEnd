@@ -14,11 +14,13 @@
 		<property name="username" column="username" />
 		<property name="password" column="password" />
 		<property name="email" column="email" />
+		
 		<list name="events" cascade="all-delete-orphan">
 			<key column="iduser" />
 			<index column="eventnumber" />
-			<one-to-many class="Event"></one-to-many>
+			<one-to-many class="Event"/>
 		</list>
+		
 		<list name="roles" table="user_role" cascade="all-delete-orphan">
 			<key column="iduser" />
 			<list-index column="list_order" />
