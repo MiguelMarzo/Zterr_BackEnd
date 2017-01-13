@@ -14,7 +14,7 @@ import org.zterr.data.model.Role;
  * @author Sergio Martínez
  *
  */
-public class HibernateRoleDAO implements RoleDAO {
+public class HibernateRoleDAO  extends GenericDAOHibernate implements RoleDAO {
 	/*
 	 * selects one customer by Id
 	 * 

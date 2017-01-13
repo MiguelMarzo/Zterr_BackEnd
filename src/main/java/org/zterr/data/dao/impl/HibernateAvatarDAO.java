@@ -8,7 +8,7 @@ import org.zterr.backend.data.HibernateSession;
 import org.zterr.data.dao.AvatarDAO;
 import org.zterr.data.model.Avatar;
 
-public class HibernateAvatarDAO implements AvatarDAO {
+public class HibernateAvatarDAO extends GenericDAOHibernate implements AvatarDAO {
 	/*
 	 * selects one avatar by Id
 	 * 

@@ -8,7 +8,7 @@ import org.zterr.backend.data.HibernateSession;
 import org.zterr.data.dao.EventDAO;
 import org.zterr.data.model.Event;
 
-public class HibernateEventDAO implements EventDAO {
+public class HibernateEventDAO extends GenericDAOHibernate  implements EventDAO {
 	/*
 	 * selects one event by Id
 	 * 

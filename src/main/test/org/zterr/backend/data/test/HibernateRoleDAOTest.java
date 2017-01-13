@@ -44,7 +44,7 @@ public class HibernateRoleDAOTest extends TestCase {
 		user1.getRoles().add(insertRole);
 		user.insert(user1);
 		roleDAO.insert(insertRole);
-		Role role = roleDAO.selectById(insertRole.getId());
+		Role role = (Role) roleDAO.selectById(insertRole.getId(), Role.class );
 		assertEquals("Select by Id should exist",role.getId(), insertRole.getId());
 //		
 		}
@@ -58,14 +58,14 @@ public class HibernateRoleDAOTest extends TestCase {
 		//UserDAO user = new HibernateUserDAO();
 		//User user1 = new User();
 		
-		int totalElements = roleDAO.selectAll().size();
+		int totalElements = roleDAO.selectAll(Role.class).size();
 		
 		Role insertRole = new Role(null,"Admin","Administrator role");
 		//user1.getRoles().add(insertRole);
 		//user.insert(user1);
 		
 		roleDAO.insert(insertRole);
-		int totalElementsAfterInsert = roleDAO.selectAll().size();
+		int totalElementsAfterInsert = roleDAO.selectAll(Role.class).size();
 		
 		assertEquals("Select All returns all elements", totalElements + 1, totalElementsAfterInsert);
 	}
@@ -98,7 +98,7 @@ public class HibernateRoleDAOTest extends TestCase {
 		roleDAO.update(insertRole);
 		
 		// Select and check if name has changed
-		Role updatedRole = roleDAO.selectById(insertRole.getId());
+		Role updatedRole = (Role) roleDAO.selectById(insertRole.getId(), Role.class);
 		
 		assertEquals("Role name was changed", updatedName, updatedRole.getName());
 	}
@@ -118,7 +118,7 @@ public class HibernateRoleDAOTest extends TestCase {
 		
 		// Delete 
 		roleDAO.delete(insertRole);
-		Role role = roleDAO.selectById(insertRole.getId());
+		Role role = (Role) roleDAO.selectById(insertRole.getId(), Role.class);
 		assertNull("Select by Id with a deleted record id shoud be null",role);	
 	}
 }

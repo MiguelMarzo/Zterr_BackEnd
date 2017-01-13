@@ -11,7 +11,7 @@ public class Main {
 
 	public static void showAll(UserDAO userDAO) {
 		// SELECT ALL DATA
-				List<User> users = userDAO.selectAll();
+				List<User> users = userDAO.selectAll(User.class);
 				System.out.println("--- USER ----- table contents	-----------");
 				for (User user : users) {
 					System.out.println("Id: " + user.getId());

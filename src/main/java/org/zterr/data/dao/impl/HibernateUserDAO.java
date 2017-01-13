@@ -8,7 +8,7 @@ import org.zterr.backend.data.HibernateSession;
 import org.zterr.data.dao.UserDAO;
 import org.zterr.data.model.User;
 
-public class HibernateUserDAO implements UserDAO {
+public class HibernateUserDAO extends GenericDAOHibernate  implements UserDAO {
 	/*
 	 * selects one user by Id
 	 * 

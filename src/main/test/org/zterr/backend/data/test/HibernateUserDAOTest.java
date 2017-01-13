@@ -43,7 +43,7 @@ public class HibernateUserDAOTest extends TestCase {
 		event1.setUser(insertUser);
 		event.insert(event1);
     	userDAO.insert(insertUser);
-		User user = userDAO.selectById(insertUser.getId());
+		User user = (User) userDAO.selectById(insertUser.getId(), User.class);
 		assertEquals("Select by Id should exist",user.getId(), insertUser.getId());
 		
 		}
@@ -53,11 +53,11 @@ public class HibernateUserDAOTest extends TestCase {
 	 */
 	@Test
 	public void testSelectAll() {
-		int totalElements = userDAO.selectAll().size();
+		int totalElements = userDAO.selectAll(User.class).size();
 		
 		User insertUser = new User(null,"Admin","Administrator user");
 		userDAO.insert(insertUser);
-		int totalElementsAfterInsert = userDAO.selectAll().size();
+		int totalElementsAfterInsert = userDAO.selectAll(User.class).size();
 		
 		assertEquals("Select All returns all elements", totalElements + 1, totalElementsAfterInsert);
 	}
@@ -92,7 +92,7 @@ public class HibernateUserDAOTest extends TestCase {
 		userDAO.update(insertUser);
 		
 		// Select and check if name has changed
-		User updatedUser = userDAO.selectById(insertUser.getId());
+		User updatedUser = (User) userDAO.selectById(insertUser.getId(), User.class);
 		
 		assertEquals("User name was changed", updatedName, updatedUser.getUsername());
 	}
@@ -108,7 +108,7 @@ public class HibernateUserDAOTest extends TestCase {
 		
 		// Delete 
 		userDAO.delete(insertUser);
-		User user = userDAO.selectById(insertUser.getId());
+		User user = (User) userDAO.selectById(insertUser.getId(),User.class);
 		assertNull("Select by Id with a deleted record id shoud be null",user);	
 	}
 }
