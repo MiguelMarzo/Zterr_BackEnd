@@ -37,12 +37,12 @@ public class HibernateRoleDAOTest extends TestCase {
 	 */
 	@Test
 	public void testSelectById() {
-		UserDAO user = new HibernateUserDAO();
-		User user1 = new User();
+		//UserDAO user = new HibernateUserDAO();
+		//User user1 = new User();
 		// Select after insert
 		Role insertRole = new Role(null,"Admin","Administrator role");
-		user1.getRoles().add(insertRole);
-		user.insert(user1);
+		//user1.getRoles().add(insertRole);
+		//user.insert(user1);
 		roleDAO.insert(insertRole);
 		Role role = roleDAO.selectById(insertRole.getId());
 		assertEquals("Select by Id should exist",role.getId(), insertRole.getId());
@@ -83,14 +83,14 @@ public class HibernateRoleDAOTest extends TestCase {
 	 */
 	@Test
 	public void testUpdate() {
-		UserDAO user = new HibernateUserDAO();
-		User user1 = new User();
+		//UserDAO user = new HibernateUserDAO();
+		//User user1 = new User();
 		String updatedName = "Admin changed";
 		
 		// Select after first insert
 		Role insertRole = new Role(null,"Admin","Administrator role");
-		user1.getRoles().add(insertRole);
-		user.insert(user1);
+		//user1.getRoles().add(insertRole);
+		//user.insert(user1);
 		roleDAO.insert(insertRole);
 		
 		// We update the role
@@ -109,11 +109,11 @@ public class HibernateRoleDAOTest extends TestCase {
 	@Test
 	public void testDelete() {
 		// Select after first insert
-		UserDAO user = new HibernateUserDAO();
-		User user1 = new User();
+		//UserDAO user = new HibernateUserDAO();
+		//User user1 = new User();
 		Role insertRole = new Role(null,"Admin","Administrator role");
-		user1.getRoles().add(insertRole);
-		user.insert(user1);
+		//user1.getRoles().add(insertRole);
+		//user.insert(user1);
 		roleDAO.insert(insertRole);
 		
 		// Delete 

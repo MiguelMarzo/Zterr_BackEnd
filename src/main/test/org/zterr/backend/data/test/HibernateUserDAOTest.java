@@ -36,12 +36,12 @@ public class HibernateUserDAOTest extends TestCase {
 	 */
 	@Test
 	public void testSelectById() {
-		EventDAO event = new HibernateEventDAO();
-		Event event1 = new Event();
+		//EventDAO event = new HibernateEventDAO();
+		//Event event1 = new Event();
 		// Select after insert
 		User insertUser = new User(null,"Admin","Administrator user");
-		event1.setUser(insertUser);
-		event.insert(event1);
+		//event1.setUser(insertUser);
+		//event.insert(event1);
     	userDAO.insert(insertUser);
 		User user = userDAO.selectById(insertUser.getId());
 		assertEquals("Select by Id should exist",user.getId(), insertUser.getId());
@@ -76,15 +76,15 @@ public class HibernateUserDAOTest extends TestCase {
 	@Test
 	public void testUpdate() {
 		
-		EventDAO event = new HibernateEventDAO();
-		Event event1 = new Event();
+		//EventDAO event = new HibernateEventDAO();
+		//Event event1 = new Event();
 		String updatedName = "Admin changed";
 //		
 //		// Select after first insert
 		User insertUser = new User(null,"Admin","Administrator user");
 		userDAO.insert(insertUser);
-		event1.setUser(insertUser);
-		event.insert(event1);
+		//event1.setUser(insertUser);
+		//event.insert(event1);
 		
 		
 		// We update the user
